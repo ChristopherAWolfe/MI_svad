@@ -39,7 +39,7 @@ set.seed(695432)
 
 # Import data based on var_info file and yada functions
 
-var_info <-  yada::load_var_info('data/US_allvar_var_info.csv')
+var_info <-  yada::load_var_info('data/US_allvar_var_info_ungroup.csv')
 data_file <- 'data/SVAD_US.csv'
 dat <- load_cp_data(data_file, var_info)
 df <- dat$cp_df

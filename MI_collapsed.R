@@ -251,7 +251,7 @@ for (i in 1:j_ord) {
 k_cont <- problem$mod_spec$K
 
 #vector to calculate density over w
-wcalc <- seq(20, 500, by=1)
+wcalc <- seq(0, 500, by=1)
 
 #weibull fit needed in calc_x_density
 th_x <- readRDS(build_file_path(data_dir, analysis_name, "solutionx"))

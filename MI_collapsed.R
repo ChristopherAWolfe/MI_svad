@@ -8,8 +8,6 @@
 #Packages 
 library(yada)
 library(tidyverse)
-library(dplyr)
-library(ggplot2)
 library(doParallel)
 library(foreach)
 registerDoParallel(detectCores())

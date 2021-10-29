@@ -183,7 +183,7 @@ for (i in 1:j_ord) {
 }
 
 # Plot the MI over baseline age
-pdf(file.path(data_dir,"MI_allVars.pdf"))
+pdf(file.path(data_dir,"MI_ord_uncollapsed.pdf"))
 for(i in 1:j_ord){
   var_name <- problem$var_names[i]
   plot(x0, unlist(MI_ord[[i]]), ylim=c(0,max(unlist(MI_ord[[i]]))),

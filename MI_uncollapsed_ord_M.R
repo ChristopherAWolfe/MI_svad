@@ -150,8 +150,8 @@ xcalc = seq(0,23,by=0.01)
 #baseline age
 x0 = seq(0,23,by=.1)
 
-#create and empty list to store ordinal results (j = 43)
-MI_ord <- setNames(vector("list", j_ord), problem$var_names[1:43])
+#create and empty list to store ordinal results (j = 44)
+MI_ord <- setNames(vector("list", j_ord), problem$var_names[1:44])
 
 # Loop over each ord var, select the best model,print best model,do MI based on
 #best model and store results in MI_ord

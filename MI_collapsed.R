@@ -209,8 +209,8 @@ xcalc = seq(0,23,by=0.01)
 #baseline age
 x0 = seq(0,23,by=.1)
 
-#create and empty list to store ordinal results (j = 43)
-MI_ord <- setNames(vector("list", j_ord), problem$var_names[1:43])
+#create and empty list to store ordinal results (j = 44)
+MI_ord <- setNames(vector("list", j_ord), problem$var_names[1:44])
 
 # Loop over each ord var, select the best model,print best model,do MI based on
 #best model and store results in MI_ord
@@ -257,13 +257,13 @@ wcalc <- seq(0, 500, by=1)
 th_x <- readRDS(build_file_path(data_dir, analysis_name, "solutionx"))
 
 #create an empty list to store continuous results (k = 18)
-MI_cont <- setNames(vector("list", k_cont), problem$var_names[44:61])
+MI_cont <- setNames(vector("list", k_cont), problem$var_names[45:62])
 
 # Loop over each cont var, select the best model with aic, print best model,  
 #do KL div,do MI based on best model and kl results and store results in MI_cont
 for (i in 1:k_cont) {
   
-  var_name <- problem$var_names[44:61][i]
+  var_name <- problem$var_names[45:62][i]
   
   print(paste0("AIC model selection for ", var_name))
   
@@ -303,7 +303,7 @@ for(i in 1:j_ord){
          type="l", lwd=2, col="grey", main = var_name) 
   }
 for(i in 1:k_cont){
-  var_name <- problem$var_names[44:61][i]
+  var_name <- problem$var_names[45:62][i]
   plot(x0, unlist(MI_cont[[i]]),ylim = c(0,max(unlist(MI_cont[[i]]))),
        xlab="Age [years]",ylab="Mutual Information",
        type="l", lwd=2, col="grey", main = var_name)

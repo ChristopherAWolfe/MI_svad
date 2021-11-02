@@ -107,7 +107,6 @@ missing_df <- data.frame(FDL=numeric(),
                          TC_Oss=numeric(),
                          ISPR_EF=numeric(),
                          ILIS_EF=numeric(),
-                         IC_EF = numeric(),
                          PC_Oss = numeric(),
                          IC_EF = numeric())
 for(j in 1:ncol(data_na)) {
@@ -149,7 +148,7 @@ long_df$var<-factor(long_df$var, levels=c("FDL","FMSB","FDB","TDL","TPB","TMSB",
       "TDE_EF","FBPE_EF","FBDE_EF","HH_Oss","HGT_Oss","HLT_Oss","HPE_EF",
       "HC_Oss","HT_Oss","HLE_Oss","HDE_EF","HME_EF","RPE_EF","RDE_EF",
       "UPE_EF","UDE_EF","CT_EF","CC_Oss","TC_Oss","ISPR_EF",
-      "ILIS_EF", "IC_EF", "PC_Oss", "IC_EF"))
+      "ILIS_EF", "PC_Oss", "IC_EF"))
 long_df$age_int <- factor(long_df$age_int, levels=age_vec)
 long_df$freq <- as.numeric(long_df$freq)
 

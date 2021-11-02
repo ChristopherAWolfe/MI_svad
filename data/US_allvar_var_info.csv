@@ -63,3 +63,4 @@ TC_Oss,ordinal,{0 1 2} 3 4 5 6 7,"NA,,-1",,,,
 ISPR_EF,ordinal,0 1 2 ,"NA,,-1",end,_L,_R,highest
 ILIS_EF,ordinal,0 1 2 ,"NA,,-1",end,_L,_R,highest
 PC_Oss,ordinal,0 1 ,"NA,,-1",end,_L,_R,highest
+IC_EF,ordinal,0 1 2 3,"NA,,-1",end,_L,_R,highest

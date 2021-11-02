@@ -40,12 +40,12 @@ df <- dat$cp_df
 ########################
 
 # Frequency of missing data per response
-data_na <- data.frame(matrix(NA, nrow=nrow(df), ncol=ncol(df[4:64])))
+data_na <- data.frame(matrix(NA, nrow=nrow(df), ncol=ncol(df[4:65])))
 for (i in 1:ncol(data_na)) {
   data_na[i] <- is.na(df[i+3])
 }
 
-names(data_na) <- names(df[4:64])
+names(data_na) <- names(df[4:65])
 
 missing_df <- data.frame(FDL=numeric(),
                          FMSB=numeric(),
@@ -108,13 +108,14 @@ missing_df <- data.frame(FDL=numeric(),
                          ISPR_EF=numeric(),
                          ILIS_EF=numeric(),
                          IC_EF = numeric(),
-                         PC_Oss = numeric())
+                         PC_Oss = numeric(),
+                         IC_EF = numeric())
 for(j in 1:ncol(data_na)) {
   pct <- length(which(data_na[j]==TRUE))/nrow(data_na)
   missing_df[1,j] <- pct*100
 }
 
-colnames(missing_df) <- colnames(df[4:64])
+colnames(missing_df) <- colnames(df[4:65])
 
 # Write missing_df to file
 print("Frequency of missing data per response variable:")
@@ -131,11 +132,11 @@ N_vec <- NULL
 for(i in 1:length(age_vec)) {
   temp_df <- df[which(df$agey==age_vec[i]),]
   N_vec <- c(N_vec, nrow(temp_df))
-  NA_vec <- as.vector(colSums(is.na(temp_df[4:64])))/N_vec[i]#count NA
+  NA_vec <- as.vector(colSums(is.na(temp_df[4:65])))/N_vec[i]#count NA
   wide_df <- cbind(wide_df, (1-NA_vec))
   colnames(wide_df) <- age_vec[1:(i)]
 }
-wide_df <- as.data.frame(cbind(colnames(df[4:64]),wide_df))# add var as column
+wide_df <- as.data.frame(cbind(colnames(df[4:65]),wide_df))# add var as column
 colnames(wide_df) <- c('var',age_vec)
 
 # Format data for geom_raster
@@ -148,7 +149,7 @@ long_df$var<-factor(long_df$var, levels=c("FDL","FMSB","FDB","TDL","TPB","TMSB",
       "TDE_EF","FBPE_EF","FBDE_EF","HH_Oss","HGT_Oss","HLT_Oss","HPE_EF",
       "HC_Oss","HT_Oss","HLE_Oss","HDE_EF","HME_EF","RPE_EF","RDE_EF",
       "UPE_EF","UDE_EF","CT_EF","CC_Oss","TC_Oss","ISPR_EF",
-      "ILIS_EF", "IC_EF", "PC_Oss"))
+      "ILIS_EF", "IC_EF", "PC_Oss", "IC_EF"))
 long_df$age_int <- factor(long_df$age_int, levels=age_vec)
 long_df$freq <- as.numeric(long_df$freq)
 
